@@ -1,1 +1,20 @@
-<p>faq works!</p>
+<div class="faq-container bg-light">
+  <h2>Frequently Asked Questions</h2>
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius possimus
+    eaque quod earum accusamus iusto veritatis asperiores voluptate? Eum
+    laudantium error, maiores nisi dolore facilis debitis delectus quo a
+    pariatur?
+  </p>
+  <ngb-accordion class="test" [closeOthers]="true" activeIds="faq1">
+    <ngb-panel
+      *ngFor="let faq of faqs; let i = index"
+      id="faq{{ faq.id }}"
+      title="{{ faq.question }}"
+    >
+      <ng-template ngbPanelContent>
+        {{ faq.answer }}
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>
