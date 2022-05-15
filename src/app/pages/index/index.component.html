@@ -1,60 +1,4 @@
-<!--Navbar Start-->
-<nav
-  class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark"
-  (window:scroll)="windowScroll()"
-  id="navbar"
->
-  <div class="container">
-    <!-- LOGO -->
-    <a class="navbar-brand logo" href="/">
-      <img
-        src="assets/images/logo-dark.png"
-        alt=""
-        class="logo-dark"
-        height="24"
-      />
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarCollapse"
-      aria-controls="navbarCollapse"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      (click)="toggleMenu()"
-    >
-      <i class="mdi mdi-menu"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
-        <li class="nav-item" [ngClass]="{ active: currentSection === 'home' }">
-          <a [ngxScrollTo]="'#home'" class="nav-link">Home</a>
-        </li>
-        <li
-          class="nav-item"
-          [ngClass]="{ active: currentSection === 'features' }"
-        >
-          <a [ngxScrollTo]="'#features'" class="nav-link">Features</a>
-        </li>
-        <li
-          class="nav-item"
-          [ngClass]="{ active: currentSection === 'contact' }"
-        >
-          <a [ngxScrollTo]="'#contact'" class="nav-link" [ngxScrollToOffset]="5"
-            >Contact Us</a
-          >
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- Navbar End -->
-<div
-  appScrollspy
-  [spiedTags]="['SECTION']"
-  (sectionChange)="onSectionChange($event)"
->
+<div>
   <!-- Hero Start -->
   <section
     class="hero-1-bg"
@@ -92,5 +36,4 @@
   <app-services></app-services>
   <app-features></app-features>
   <app-contact></app-contact>
-  <app-footer></app-footer>
 </div>

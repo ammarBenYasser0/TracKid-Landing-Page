@@ -3,10 +3,12 @@ import { CommonModule } from "@angular/common";
 
 import { FeaturesComponent } from "./features/features.component";
 import { ContactComponent } from "./contact/contact.component";
-import { ServicesComponent } from "./services/services.component";
+import { ServicesComponent } from "./services-component/services.component";
 import { FooterComponent } from "./footer/footer.component";
 
 import { FeatherModule } from "angular-feather";
+import { ScrollToModule } from "@nicky-lenaers/ngx-scroll-to";
+
 import {
   Mail,
   Link,
@@ -29,7 +31,8 @@ import {
   Triangle,
   Smartphone,
 } from "angular-feather/icons";
-import { ScrollspyDirective } from "./scrollspy.directive";
+import { NavbarComponent } from "./navbar/navbar.component";
+import { PagesRoutingModule } from "../pages/pages-routing.module";
 
 const icons = {
   Mail,
@@ -60,16 +63,21 @@ const icons = {
     ContactComponent,
     ServicesComponent,
     FooterComponent,
-    ScrollspyDirective,
+    NavbarComponent,
   ],
-  imports: [CommonModule, FeatherModule.pick(icons)],
+  imports: [
+    CommonModule,
+    FeatherModule.pick(icons),
+    ScrollToModule.forRoot(),
+    PagesRoutingModule,
+  ],
   exports: [
     FeaturesComponent,
     ContactComponent,
     ServicesComponent,
     FooterComponent,
     FeatherModule,
-    ScrollspyDirective,
+    NavbarComponent,
   ],
 })
 export class SharedModule {}

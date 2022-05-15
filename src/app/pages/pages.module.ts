@@ -10,10 +10,11 @@ import { PagesRoutingModule } from './pages-routing.module';
 
 import { SharedModule } from '../shared/shared.module';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 @NgModule({
-  declarations: [IndexComponent, AboutUsComponent],
+  declarations: [IndexComponent, AboutUsComponent, FaqComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,
